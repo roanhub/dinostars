@@ -128,3 +128,10 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# wwebjs
+.wwebjs_auth
+.wwebjs_cache
+
+# Data Base Local
+db.json
