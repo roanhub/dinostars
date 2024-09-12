@@ -21,7 +21,4 @@ async function addUserToDb(data) {
   }
 }
 
-export default {
-  loadDb,
-  addUserToDb,
-};
+export { loadDb, addUserToDb };
