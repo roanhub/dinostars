@@ -403,8 +403,8 @@ packages:
   proxy-from-env@1.1.0:
     resolution: {integrity: sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg==}
 
-  pump@3.0.1:
-    resolution: {integrity: sha512-2ynnAmUu45oUSq51AQbeugLkMSKaz8FqVpZ6ykTqzOVkzXe8u/ezkGsYrFJqKZx+D9cVxoDrSbR7CeAwxFa5cQ==}
+  pump@3.0.2:
+    resolution: {integrity: sha512-tUPXtzlGM8FE3P0ZL6DVs/3P58k9nk8/jZeQCurTJylQA8qFYzHFfhBJkuqyE0FifOsQ0uKWekiZ5g8wtr28cw==}
 
   puppeteer-core@18.2.1:
     resolution: {integrity: sha512-MRtTAZfQTluz3U2oU/X2VqVWPcR1+94nbA2V6ZrSZRVEwLqZ8eclZ551qGFQD/vD2PYqHJwWOW/fpC721uznVw==}
@@ -828,7 +828,7 @@ snapshots:
 
   get-stream@5.2.0:
     dependencies:
-      pump: 3.0.1
+      pump: 3.0.2
 
   glob@7.2.3:
     dependencies:
@@ -984,7 +984,7 @@ snapshots:
 
   proxy-from-env@1.1.0: {}
 
-  pump@3.0.1:
+  pump@3.0.2:
     dependencies:
       end-of-stream: 1.4.4
       once: 1.4.0
@@ -1099,7 +1099,7 @@ snapshots:
     dependencies:
       chownr: 1.1.4
       mkdirp-classic: 0.5.3
-      pump: 3.0.1
+      pump: 3.0.2
       tar-stream: 2.2.0
 
   tar-stream@2.2.0:

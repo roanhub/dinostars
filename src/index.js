@@ -56,7 +56,91 @@ bot
           const comando = msg.body.split(" ");
 
           if (/^brawler/i.test(comando[1])) {
-            const brawlers = [ 'SHELLY', 'COLT', 'BULL', 'BROCK', 'RICO', 'SPIKE', 'BARLEY', 'JESSIE', 'NITA', 'DYNAMIKE', 'EL PRIMO', 'MORTIS', 'CROW', 'POCO', 'BO', 'PIPER', 'PAM', 'TARA', 'DARRYL', 'PENNY', 'FRANK', 'GENE', 'TICK', 'LEON', 'ROSA', 'CARL', 'BIBI', '8-BIT', 'SANDY', 'BEA', 'EMZ', 'MR. P', 'MAX', 'JACKY', 'GALE', 'NANI', 'SPROUT', 'SURGE', 'COLETTE', 'AMBER', 'LOU', 'BYRON', 'EDGAR', 'RUFFS', 'STU', 'BELLE', 'SQUEAK', 'GROM', 'BUZZ', 'GRIFF', 'ASH', 'MEG', 'LOLA', 'FANG', 'EVE', 'JANET', 'BONNIE', 'OTIS', 'SAM', 'GUS', 'BUSTER', 'CHESTER', 'GRAY', 'MANDY', 'R-T', 'WILLOW', 'MAISIE', 'HANK', 'CORDELIUS', 'DOUG', 'PEARL', 'CHUCK', 'CHARLIE', 'MICO', 'KIT', 'LARRY & LAWRIE', 'MELODIE', 'ANGELO', 'DRACO', 'LILY', 'BERRY', 'CLANCY', 'MOE' ]
+            const brawlers = [
+              "SHELLY",
+              "COLT",
+              "BULL",
+              "BROCK",
+              "RICO",
+              "SPIKE",
+              "BARLEY",
+              "JESSIE",
+              "NITA",
+              "DYNAMIKE",
+              "EL PRIMO",
+              "MORTIS",
+              "CROW",
+              "POCO",
+              "BO",
+              "PIPER",
+              "PAM",
+              "TARA",
+              "DARRYL",
+              "PENNY",
+              "FRANK",
+              "GENE",
+              "TICK",
+              "LEON",
+              "ROSA",
+              "CARL",
+              "BIBI",
+              "8-BIT",
+              "SANDY",
+              "BEA",
+              "EMZ",
+              "MR. P",
+              "MAX",
+              "JACKY",
+              "GALE",
+              "NANI",
+              "SPROUT",
+              "SURGE",
+              "COLETTE",
+              "AMBER",
+              "LOU",
+              "BYRON",
+              "EDGAR",
+              "RUFFS",
+              "STU",
+              "BELLE",
+              "SQUEAK",
+              "GROM",
+              "BUZZ",
+              "GRIFF",
+              "ASH",
+              "MEG",
+              "LOLA",
+              "FANG",
+              "EVE",
+              "JANET",
+              "BONNIE",
+              "OTIS",
+              "SAM",
+              "GUS",
+              "BUSTER",
+              "CHESTER",
+              "GRAY",
+              "MANDY",
+              "R-T",
+              "WILLOW",
+              "MAISIE",
+              "HANK",
+              "CORDELIUS",
+              "DOUG",
+              "PEARL",
+              "CHUCK",
+              "CHARLIE",
+              "MICO",
+              "KIT",
+              "LARRY & LAWRIE",
+              "MELODIE",
+              "ANGELO",
+              "DRACO",
+              "LILY",
+              "BERRY",
+              "CLANCY",
+              "MOE",
+            ];
 
             if (brawlers.includes(comando[2].toUpperCase())) {
               const perfilPlayer = await db.data.user.find(
@@ -183,11 +267,10 @@ bot.on("group_join", async (join) => {
     console.log(chat);
     // console.log(contact);
     console.log(pic);
-
     // const picProfile = await Jimp.read(pic);
-    const img2 = await loadImage(pic);
-    const saludoD = await loadImage("./src/img/saludoDerecha.png");
-    const saludoI = await loadImage("./src/img/saludoIzquierda.png");
+    const img2 = await loadImage(pic !== undefined ? pic : './img/player_icon_mortis.png');
+    const saludoD = await loadImage("https://github.com/roanhub/dinostars/blob/main/src/img/saludoDerecha.png");
+    const saludoI = await loadImage("https://github.com/roanhub/dinostars/blob/main/src/img/saludoIzquierda.png");
     // registerFont("./src/font/Anton/Anton-Regular.ttf", { family: "anton" });
     const canvas = createCanvas(800, 300);
     const context = canvas.getContext("2d");
@@ -196,7 +279,7 @@ bot.on("group_join", async (join) => {
 
     console.log(img2);
 
-    await loadImage("./src/img/saludoBg.png").then((img) => {
+    await loadImage("../public/img/saludoBg.png").then((img) => {
       context.drawImage(img, 0, 0, 800, 300);
       context.drawImage(img2, 307, 30, 184, 184);
       context.drawImage(saludoD, 30, 61, 178, 178);
