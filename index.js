@@ -1,11 +1,11 @@
-import { bot, qrcode, MessageMedia } from "./config/client.cjs";
-import bsApi from "./api/bsApi.mjs";
-import { loadDb, addUserToDb } from "./api/db.mjs";
+import { bot, qrcode, MessageMedia } from "./src/config/client.cjs";
+import bsApi from "./src/api/bsApi.mjs";
+import { loadDb, addUserToDb } from "./src/api/db.mjs";
 import { createCanvas, loadImage, registerFont } from "canvas";
 import fs from "fs";
 
 // utils/plugins
-import sticker from "./utils/plugins/stickers.mjs";
+import sticker from "./src/utils/plugins/stickers.mjs";
 
 bot
   .on("qr", (qr) => qrcode.generate(qr, { small: true }))
@@ -268,9 +268,9 @@ bot.on("group_join", async (join) => {
     // console.log(contact);
     console.log(pic);
     // const picProfile = await Jimp.read(pic);
-    const img2 = await loadImage(pic !== undefined ? pic : './img/player_icon_mortis.png');
-    const saludoD = await loadImage("https://github.com/roanhub/dinostars/blob/main/src/img/saludoDerecha.png");
-    const saludoI = await loadImage("https://github.com/roanhub/dinostars/blob/main/src/img/saludoIzquierda.png");
+    const img2 = await loadImage(pic !== undefined ? pic : './src/img/player_icon_mortis.png');
+    const saludoD = await loadImage("./src/img/saludoDerecha.png");
+    const saludoI = await loadImage("./src/img/saludoIzquierda.png");
     // registerFont("./src/font/Anton/Anton-Regular.ttf", { family: "anton" });
     const canvas = createCanvas(800, 300);
     const context = canvas.getContext("2d");
@@ -279,7 +279,7 @@ bot.on("group_join", async (join) => {
 
     console.log(img2);
 
-    await loadImage("../public/img/saludoBg.png").then((img) => {
+    await loadImage("./src/img/saludoBg.png").then((img) => {
       context.drawImage(img, 0, 0, 800, 300);
       context.drawImage(img2, 307, 30, 184, 184);
       context.drawImage(saludoD, 30, 61, 178, 178);
